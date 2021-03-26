@@ -8,11 +8,11 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 const addOne = (arr) => {
-        let arrayAdded = [];
+        const arrayAdded = [];
         arr.forEach((element) => {
             arrayAddedd.push(element + 1);
         });
-        return arrayAddedd
+        return arrayAddedd;
     }
     /* ------------------------------------------------------------------------------------------------
     CHALLENGE 2
@@ -39,7 +39,7 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-    let upperCaseArray = [];
+    const upperCaseArray = [];
     arr.forEach((element) => {
         upperCaseArray.push(element.toUpperCase())
     });
@@ -55,18 +55,17 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
-
+//did not get it ---------------------- ----------------- ----------- 
 const greeting = (word) => {
-    word.forEach((element) => {
-        return word.forEach(element.toUpperCase + '!')
-    })
+    return word.toUpperCase + '!';
 };
 
 const speaker = (words, callback) => {
-    newArray = []
-    words.forEach((element) => {
-        newArray.push(callback(element));
+    newArray = [];
+    words.forEach(word => {
+        newArray.push(callback(word));
     })
+    return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
