@@ -9,18 +9,16 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-    // Solution code here...
-    let reduceResult = arr.reduce((initialValue, currentValue, index) => {
-        for (let i = 1; i < arr.length + 1; i++) {
-            if (arr[i - 1] > arr[i]) {
-                initialValue = arr[i - 1];
-            } else {
-                initialValue = arr[i];
-            }
+    let finalVlue = 0;
+    arr.reduce((accumulator, currentValue) => {
+        if (accumulator > currentValue) {
+            console.log(finalVlue)
+            return finalVlue = accumulator;
+        } else {
+            return finalVlue = currentValue;
         }
-        return initialValue;
     }, 0)
-
+    return finalVlue
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,7 +59,16 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-    // Solution code here...
+    // let newArr = 0
+    let newArr = matrix.map(element => {
+
+        let innerSum = element.reduce((accumulator, currentValue) => { return accumulator + currentValue }, 0)
+            // console.log(innerSum)
+        return innerSum
+    })
+    newArr = newArr.reduce((acc, value) => acc + value, 0)
+    console.log(newArr)
+    return newArr;
 };
 
 
