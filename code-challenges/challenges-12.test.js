@@ -20,6 +20,7 @@ const longestString = (arr) => {
         }
     }, 0)
     return maxNumber;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,7 +72,6 @@ const totalSum = (matrix) => {
     } else {
         return newArr.reduce((accumulator, currentValue) => accumulator + currentValue)
     }
-};
 
 
 /* ------------------------------------------------------------------------------------------------
