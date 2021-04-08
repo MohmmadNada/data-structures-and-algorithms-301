@@ -99,21 +99,14 @@ const allHappy = (arr) => {
     arr.forEach(element => {
         resultArr.push(element.includes(":)"))
     })
-    console.log(resultArr)
-    console.log(resultArr.includes(false))
-
     let returnResult;
     if (resultArr.includes(false)) {
-        console.log('two arrays are eqal or empty')
         returnResult = false
     } else if (resultArr.length === 0) {
-        console.log('else1')
         returnResult = true
     } else {
-        console.log('else2')
         returnResult = true
     }
-    console.log('returnResult', returnResult)
     return returnResult;
 };
 
