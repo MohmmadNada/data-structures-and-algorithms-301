@@ -8,17 +8,19 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => {
-    let finalVlue = 0;
+
+const longestString = (arr) => {
+    // Solution code here...
+    let maxNumber = 0;
     arr.reduce((accumulator, currentValue) => {
         if (accumulator > currentValue) {
-            console.log(finalVlue)
-            return finalVlue = accumulator;
+            return maxNumber = accumulator;
         } else {
-            return finalVlue = currentValue;
+            return maxNumber = currentValue;
         }
     }, 0)
-    return finalVlue
+    return maxNumber;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,17 +61,17 @@ For example:
 return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
-    // let newArr = 0
-    let newArr = matrix.map(element => {
-
-        let innerSum = element.reduce((accumulator, currentValue) => { return accumulator + currentValue }, 0)
-            // console.log(innerSum)
-        return innerSum
+    // Solution code here...
+    // Solution code here...
+    let newArr = []
+    matrix.forEach(element => {
+        newArr.push(element.reduce((accumulator, currentValue) => accumulator + currentValue))
     })
-    newArr = newArr.reduce((acc, value) => acc + value, 0)
-    console.log(newArr)
-    return newArr;
-};
+    if (newArr.length == 0) {
+        return 0
+    } else {
+        return newArr.reduce((accumulator, currentValue) => accumulator + currentValue)
+    }
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -97,6 +99,17 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 const grandTotal = (stores) => {
     // Solution code here...
 
+    const sumArrHourly = []; //this will give us final result 
+    stores.forEach(element => { //element is internl array , lets loop in it 
+        for (let i = 0; i < element.length; i++) {
+            if (sumArrHourly[i]) {
+                sumArrHourly[i] += element[i];
+            } else if (!sumArrHourly[i]) {
+                sumArrHourly[i] = element[i];
+            }
+        }
+    });
+    return sumArrHourly;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,6 +148,8 @@ const errands = [{
 
 const howManyTreats = (arr) => {
     // Solution code here...
+    let testResult = arr.reduce((accumulator, currentValue) => currentValue.items.reduce((accumulator2, element2) => element2.name == 'Treats' ? element2.quantity : accumulator2, ''), '');
+    return testResult;
 };
 
 /* ------------------------------------------------------------------------------------------------
