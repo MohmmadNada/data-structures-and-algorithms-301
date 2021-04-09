@@ -59,6 +59,7 @@ const sortByChildren = (charArray) => {
         return a.children.length - b.children.length
     })
     return charArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -166,6 +167,7 @@ const hasChildrenValues = (arr, character) => {
         }
     });
     return resultReturn;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
