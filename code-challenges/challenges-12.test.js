@@ -11,17 +11,19 @@ E.g. [4,2,7,5,9,2] -> 9
 
 const longestString = (arr) => {
     // Solution code here...
-    let maxNumber = 0;
-    arr.reduce((accumulator, currentValue) => {
-        if (accumulator > currentValue) {
-            return maxNumber = accumulator;
-        } else {
-            return maxNumber = currentValue;
-        }
-    }, 0)
-    return maxNumber;
-
-};
+    const maxInArray = (arr) => {
+        let finalVlue = 0;
+        arr.reduce((accumulator, currentValue) => {
+            if (accumulator > currentValue) {
+                console.log(finalVlue)
+                return finalVlue = accumulator;
+            } else {
+                return finalVlue = currentValue;
+            }
+        }, 0)
+        return finalVlue
+    };
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -72,6 +74,7 @@ const totalSum = (matrix) => {
     } else {
         return newArr.reduce((accumulator, currentValue) => accumulator + currentValue)
     }
+};
 
 
 /* ------------------------------------------------------------------------------------------------
